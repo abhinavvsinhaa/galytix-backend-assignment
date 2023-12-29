@@ -22,14 +22,18 @@ namespace Galytix.Controllers
 		}
 
 		[HttpPost]
-		public Task<IActionResult> Post([FromBody]CountryGWPPostRequest body)
+		public async Task<IActionResult> Post([FromBody]CountryGWPPostRequest body)
 		{
             
 			List<double> averages = new();
 
 			for (int i = 0; i < body.lob.Count; i++)
 			{
-                var countries = _csvService.ReadCSV<CountryGWP>();
+				// asynchronously fetching the data
+				var countries = await Task.Run(() =>
+				{
+                    return _csvService.ReadCSV<CountryGWP>();
+                }); 
 
 				foreach (var country in countries)
 				{
@@ -62,7 +66,7 @@ namespace Galytix.Controllers
 				}
 			}
 
-			return Task.FromResult<IActionResult>(Ok(averages));
+			return await Task.FromResult<IActionResult>(Ok(averages));
         }
 	}
 }
