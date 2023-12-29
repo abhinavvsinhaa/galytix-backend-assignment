@@ -21,3 +21,4 @@ I've created a controller named ```CountryGWPController.cs``` inside the Control
 ## Bonus completion: 
 
 1. Asynchronous calls
+2. Dependency Injection / Inversion of control
