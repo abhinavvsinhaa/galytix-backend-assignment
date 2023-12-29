@@ -6,7 +6,7 @@ Swagger can be accessed on: https://localhost:9091/swagger/index.html
 
 API Endpoint: https://localhost:9091/api/gwp/avg
 
-Approach:
+## Approach:
 
 I've created a controller named ```CountryGWPController.cs``` inside the Controllers folder to catch the POST request on the route ```api/gwp/avg```, which calls a service named ```CSVService``` defined under the Services folder, to read the CSV file asynchronously, and return the desired output. 
 
@@ -17,3 +17,7 @@ I've created a controller named ```CountryGWPController.cs``` inside the Control
  
 2. API Endpoint response
 <img width="1387" alt="Screenshot 2023-12-29 at 3 58 49 PM" src="https://github.com/abhinavvsinhaa/galytix-backend-assignment/assets/76272472/4654a507-fe2c-4d9a-9f24-2531a88a345f">
+
+## Bonus completion: 
+
+1. Asynchronous calls
